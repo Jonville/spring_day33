@@ -1,0 +1,36 @@
+-------------------------20230420-------------------------
+
+Spring 구동 방식
+
+com.example.test1.controller
+	StudentController
+	주소 역할 /student.do - 주소 이름을 만듬
+			/student.dox - DB에 접근해서 호출하는 주소
+			
+			
+	return new Gson().toJson(resultMap);
+		- json 으로 호출시켜줘야한다
+
+com.example.test1.dao
+	StudentService - 필요한 메소드를 정의해놓는다
+	StudentServiceImpl - 인터페이스를 구체화 시킴
+						mapper 를 호출한다
+
+com.example.test1.mapper
+	StudentMapper - 
+
+com.example.test1.model
+	Student - Getter Setter 만들어줌
+
+mybatis-mapper	(xml 파일)
+	sql-student - 얘부터 작성해주는것이 좋음.(쿼리문)
+
+WEB-INF
+	ajax 통신으로 dox 주소를 찾아감
+	
+
+
+@Mapper -  xml 쪽 에 연결해주는애
+@Autowired - 인터페이스 메소드를 연결시켜주는애
+				인터페이스 객체를 생성해주는 친구
+
